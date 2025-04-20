@@ -1,0 +1,30 @@
+/* Start sign up page */
+
+/* Container styling */
+.signup-form {
+    max-width: 900px;
+}
+
+/* Branding section */
+.branding-section {
+    background: linear-gradient(to bottom, #3b5998, #8b9dc3);
+    border-radius: 8px;
+    color: white;
+}
+
+/* Form card styling */
+.form-card {
+    border: none;
+}
+
+/* Form control styling */
+.form-control {
+    border-radius: 4px;
+}
+
+/* Button styling */
+.btn-primary {
+    font-weight: bold;
+}
+
+/* End sign up page */
