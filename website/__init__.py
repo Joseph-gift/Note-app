@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+from flask_login import LoginManager
 
 # Initializing the SQLAlchemy object
 # This object will be used to interact with the database
@@ -23,6 +24,7 @@ def create_app():
     # Initializing the database with the application instance
     db.init_app(app)
 
+
     # Registering the blueprints for the website module
     from .views import views
     from .auth import auth
@@ -39,5 +41,19 @@ def create_app():
 
     with app.app_context():
         db.create_all()
+
+    # Initialize the LoginManager
+    # This object will be used to manage user sessions and authentication
+    # The login_view attribute specifies the view function to redirect to when a user is not logged in
+    # In this case, it will redirect to the "auth.login" view function
+    # The login_manager.init_app(app) method initializes the LoginManager with the application instance
+    login_manager = LoginManager()
+    login_manager.login_view = "auth.login"
+    login_manager.init_app(app)
+
+    # Load the user by it Id
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
 
     return app

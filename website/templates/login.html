@@ -6,7 +6,7 @@ login
 
 {% block content %}
 
-<form action = "/signup" method="POST" class = "signup-form container my-5">
+<form action = "/login" method="POST" class = "login-form container my-5">
     <div class="row">
         <!-- Left side-->
          <div class="col-md-6 branding-section d-none d-md-flex align-items-center justify-content-center">
@@ -19,11 +19,11 @@ login
          <div class="col-md-6">
             <div class="card shadow-lg form-card">
                 <div class="card-body p-4">
-                    <h2 class="card-title text-center mb-4">Sign Up</h2>
+                    <h2 class="card-title text-center mb-4">Login</h2>
 
                     <div class="form-group mb-3">
-                        <label for="username" class="form-label">Username:</label>
-                        <input type="text" id="username" name="username" placeholder="Enter your username" class="form-control" required>
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" required>
                     </div>
                     
                     
