@@ -28,3 +28,15 @@
 }
 
 /* End sign up page */
+
+@keyframes fadeAnimation {
+    0%{ opacity: 1; }
+    25% { opacity: 0.75; }
+    50% { opacity: 0.5; }
+    75% { opacity: 0.25; }
+    100% { opacity: 0; }
+}
+
+.fade {
+    animation: fadeAnimation 2s ease-out ;
+}
